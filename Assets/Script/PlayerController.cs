@@ -1,12 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
     public Transform _gunSight;
+    
     public GameObject _shoot;
-     public GameObject _specialshoot;
+    public GameObject _specialshoot;
+
+    public int _mountShoot;
+    public float _amountTotalShoot=3;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +21,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                print("apertou espaço");
-                Bullet();
-            }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            print("apertou espaço");
+            Bullet();
+        }
 
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -30,16 +34,19 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    public void Bullet() {
+    public void Bullet()
+    {
 
-      GameObject bulllet=  Instantiate(_shoot, _gunSight.position, _gunSight.rotation);
-    
-    
+        GameObject bulllet = Instantiate(_shoot, _gunSight.position, _gunSight.rotation);
+
+
     }
+
     public void BulletSpecial()
     {
 
         GameObject specialshoot = Instantiate(_specialshoot, _gunSight.position, _gunSight.rotation);
+     
 
 
     }
@@ -50,3 +57,4 @@ public class PlayerController : MonoBehaviour
 
 
 }
+

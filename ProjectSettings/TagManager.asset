@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Barricade
+  - Shoot
+  - Enemy
+  - ShootSecond
   layers:
   - Default
   - TransparentFX

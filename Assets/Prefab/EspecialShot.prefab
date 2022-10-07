@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 2017825915063624933}
   m_Layer: 0
   m_Name: EspecialShot
-  m_TagString: Untagged
+  m_TagString: ShootSecond
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  exploseEffect: {fileID: 8048759113980476159, guid: 39b0dd49dc62270489d8f19aaa6dfa3c, type: 3}
 --- !u!50 &2017825915063624933
 Rigidbody2D:
   serializedVersion: 4

@@ -6,7 +6,7 @@ public class Shot : MonoBehaviour
 {
     public float speed = 5.0f;
     private Rigidbody2D rb;
-
+    public GameObject exploseEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +30,12 @@ public class Shot : MonoBehaviour
     {
         if (col.gameObject.tag == "Barricade")
         {
+            Instantiate(exploseEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "Enemy")
+        {
+            Instantiate(exploseEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
