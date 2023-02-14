@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject _specialshoot;
 
     public int _mountShoot;
-    public float _amountTotalShoot=3;
+    public float _amountTotalShoot= 3;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //inpunt 
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -46,9 +47,7 @@ public class PlayerController : MonoBehaviour
     {
 
         GameObject specialshoot = Instantiate(_specialshoot, _gunSight.position, _gunSight.rotation);
-     
-
-
+          
     }
 
 

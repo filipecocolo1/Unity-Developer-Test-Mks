@@ -1,43 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Threading;
+using Unity.VisualScripting.Dependencies.NCalc;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class EnemyMoviment : MonoBehaviour
 {
-    public float e_Speed;
-    public float e_WaitingTime;
-    public Transform[] e_Position;
+    public float speed;
+    float waitTime;
+    float startWaitime;
 
-    int e_Randomic;
-    float e_Time;
-
+    public Transform _pivot;
 
 
-    // Start is called before the first frame update
+    public Transform[] moveSPots;
+    private int randomSpot;
+
+
     void Start()
     {
-        e_Randomic = Random.Range(0, e_Position.Length);
-        e_Time = e_WaitingTime;
+        //posição aleatoria onde o barco deve seguir
+        randomSpot = Random.Range(0, moveSPots.Length);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, e_Position[e_Randomic].position, e_Speed * Time.deltaTime);
-        float _dist = Vector2.Distance(transform.position, e_Position[e_Randomic].position);
-
-        if (_dist<=.2f)
+       transform.position = Vector2.MoveTowards (transform.position, moveSPots[randomSpot].position, speed * Time.deltaTime);
+        transform.up = (moveSPots[randomSpot].position - transform.position).normalized;
+        if (Vector2.Distance(transform.position, moveSPots[randomSpot].position) <0.2f )
         {
-            if (e_Time<=0)
+            if (waitTime < 0) 
             {
-                e_Randomic = Random.Range(0, e_Position.Length);
-                e_Time = e_WaitingTime;
+                randomSpot = Random.Range(0,moveSPots.Length);
+                waitTime = startWaitime;
             }
             else
             {
-                e_Time -= Time.deltaTime;
+                waitTime -= Time.deltaTime; 
             }
-
         }
+    
     }
 }
