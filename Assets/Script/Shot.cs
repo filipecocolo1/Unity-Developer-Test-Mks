@@ -10,7 +10,7 @@ public class Shot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+      var  rb = GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * speed, ForceMode2D.Impulse);
     }
 

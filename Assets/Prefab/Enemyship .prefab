@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 112793709355135481}
   - component: {fileID: 112793709355135482}
   - component: {fileID: 112793709355135478}
-  - component: {fileID: 112793709355135476}
   m_Layer: 0
   m_Name: 'Enemyship '
   m_TagString: Enemy
@@ -171,19 +170,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!58 &112793709355135476
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112793709355135484}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.15015373, y: 0.1630507}
-  serializedVersion: 2
-  m_Radius: 1.76
