@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
-    public float speed = 5.0f;
+    [SerializeField] private float speed = 8.0f;
     private Rigidbody2D rb;
     public GameObject exploseEffect;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(transform.right * speed, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(0, speed);
+       
 
     }
     void OnBecameInvisible()
