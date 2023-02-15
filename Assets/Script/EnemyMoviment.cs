@@ -15,20 +15,29 @@ public class EnemyMoviment : MonoBehaviour
     float waitTime;
     float startWaitime;
 
+    public Transform point;
+
+
     public Transform _pivot;
 
 
     public Transform[] moveSPots;
     private int randomSpot;
-    private
+    
 
        
     void Start()
     {
         //posição aleatoria onde o barco deve seguir
         randomSpot = Random.Range(0, moveSPots.Length);
-        
-    
+        Transform _point = GameObject.Find("Point").transform;
+
+        moveSPots = new Transform[_point.childCount];
+        for (int i = 0; i < _point.childCount; i++)
+        {
+            moveSPots[i] = _point.GetChild(i);
+        }
+
     }
 
     private void Update()

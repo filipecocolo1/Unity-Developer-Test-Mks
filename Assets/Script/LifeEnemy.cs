@@ -33,13 +33,12 @@ public class LifeEnemy : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (col.gameObject.tag == "ShootSecond" +
-            "")
+        if (col.gameObject.tag == "ShootSecond")
         {
             _lifeEnemy-=2;
 
         }
-        if (_lifeEnemy == 0)
+        if (_lifeEnemy <= 0)
 
         {
             Destroy(gameObject);
