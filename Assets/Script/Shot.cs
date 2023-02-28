@@ -39,6 +39,7 @@ public class Shot : MonoBehaviour
             Instantiate(exploseEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+        
     }
 
 }

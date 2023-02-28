@@ -5,7 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public EnemyMoviment Enemy;  //Aqui onde vai armazenar o prefab
+    public EnemyMovement Enemy;  //Aqui onde vai armazenar o prefab
   
 
     public float TempSpawn;//Tempo de spawn do Inimigo 
@@ -32,7 +32,7 @@ public class EnemySpawn : MonoBehaviour
         {
 
             CountTemp = 0;
-            EnemyMoviment e = Instantiate(Enemy, this.transform.position, this.transform.rotation);
+            EnemyMovement e = Instantiate(Enemy, this.transform.position, this.transform.rotation);
 
         }
         
