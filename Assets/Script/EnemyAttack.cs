@@ -4,16 +4,29 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public Transform player;            // Referência ao objeto do jogador
-    public float attackDistance = 10f;  // Distância máxima que o inimigo pode atacar o jogador
-    public float attackTime = 2f;       // Tempo entre os ataques
-    public GameObject bulletPrefab;     // Prefab do projétil que o inimigo vai disparar
-    public Transform bulletSpawnPoint; // Local onde o projétil será criado
+    private Transform player;            // Referência ao objeto do jogador
+    public float attackDistance = 10f;   // Distância máxima que o inimigo pode atacar o jogador
+    public float attackTime = 2f;        // Tempo entre os ataques
+    public GameObject bulletPrefab;      // Prefab do projétil que o inimigo vai disparar
+    public Transform bulletSpawnPoint;  // Local onde o projétil será criado
 
-    private float attackTimer = 0f;     // Contador para o tempo entre os ataques
+    private float attackTimer = 0f;      // Contador para o tempo entre os ataques
+
+    private void Awake()
+    {
+        // Procura o jogador na cena e guarda sua referência
+        player = GameObject.FindWithTag("Player").transform;
+
+        if (player == null)
+        {
+            Debug.LogError("Não foi possível encontrar o jogador na cena.");
+        }
+    }
 
     void Update()
     {
+        if (player == null) return; // Para de atualizar o comportamento caso o jogador não tenha sido encontrado
+
         // Verifica a distância entre o jogador e o inimigo
         float distance = Vector3.Distance(transform.position, player.position);
 

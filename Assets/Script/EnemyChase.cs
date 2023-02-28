@@ -15,6 +15,7 @@ public class EnemyChase : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform; // Obtém a referência do transform do jogador
         enemyMovement = GetComponent<EnemyMovement>(); // Obtém a referência do script EnemyMovement que está no mesmo objeto que este script
     }
 

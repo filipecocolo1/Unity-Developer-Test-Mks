@@ -7,17 +7,9 @@ public class enemyDamage : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject exploseEffect;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -27,11 +19,10 @@ public class enemyDamage : MonoBehaviour
             Instantiate(exploseEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
-      
-
     }
-
-
-
-
 }
+    
+
+
+
+
